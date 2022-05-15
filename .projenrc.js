@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'maafk',
   authorAddress: 'maafk@users.noreply.github.com',
-  cdkVersion: '2.1.0',
+  cdkVersion: '2.24.1',
   defaultReleaseBranch: 'main',
   name: 'cdk-hugo-deploy',
   repositoryUrl: 'https://github.com/maafk/cdk-hugo-deploy.git',
