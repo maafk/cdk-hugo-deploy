@@ -21,5 +21,4 @@ test('Cloudfront function Included', () => {
 
   // THEN
   template.resourceCountIs('AWS::CloudFront::Function', 1);
-
 });

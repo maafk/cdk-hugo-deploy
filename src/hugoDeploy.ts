@@ -1,5 +1,14 @@
 import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
-import { AllowedMethods, CachePolicy, Distribution, Function, FunctionCode, FunctionEventType, SecurityPolicyProtocol, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
+import {
+  AllowedMethods,
+  CachePolicy,
+  Distribution,
+  Function,
+  FunctionCode,
+  FunctionEventType,
+  SecurityPolicyProtocol,
+  ViewerProtocolPolicy,
+} from 'aws-cdk-lib/aws-cloudfront';
 import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
@@ -31,7 +40,6 @@ export interface HugoDeployProps {
 }
 
 export class HugoDeploy extends Construct {
-
   public readonly publicDir: string;
   public readonly domainName: string;
   public readonly region?: string;
@@ -42,7 +50,6 @@ export class HugoDeploy extends Construct {
     this.publicDir = props.publicDir;
     this.domainName = props.domainName;
     this.region = props.region ? props.region : 'us-east-1';
-
 
     const bucket = new Bucket(this, 'WebsiteBucket', {
       publicReadAccess: false,
@@ -68,10 +75,12 @@ export class HugoDeploy extends Construct {
         viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         allowedMethods: AllowedMethods.ALLOW_GET_HEAD,
         cachePolicy: CachePolicy.CACHING_OPTIMIZED,
-        functionAssociations: [{
-          function: cfFunction,
-          eventType: FunctionEventType.VIEWER_REQUEST,
-        }],
+        functionAssociations: [
+          {
+            function: cfFunction,
+            eventType: FunctionEventType.VIEWER_REQUEST,
+          },
+        ],
       },
       domainNames: [this.domainName],
       certificate,
