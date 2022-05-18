@@ -16,11 +16,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     packageId: 'maafk.CdkHugoDeploy',
     dotNetNamespace: 'maafk.CdkHugoDeploy',
   },
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
 });
 project.package.addField('resolutions', {
   'ansi-regex': '^5.0.1',
