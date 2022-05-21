@@ -1,5 +1,5 @@
 import { realpathSync } from 'fs';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import {
   AllowedMethods,
@@ -67,7 +67,7 @@ export class HugoDeploy extends Construct {
 
     const cfFunction = new Function(this, 'HugoPaths', {
       code: FunctionCode.fromFile({
-        filePath: path.join(dirname(realpathSync(__filename)), 'hugoPaths.js'),
+        filePath: join(dirname(realpathSync(__filename)), 'hugoPaths.js'),
       }),
     });
 
