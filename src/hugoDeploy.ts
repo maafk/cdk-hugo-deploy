@@ -1,5 +1,3 @@
-import { realpathSync } from 'fs';
-import { dirname, join } from 'path';
 import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import {
   AllowedMethods,
