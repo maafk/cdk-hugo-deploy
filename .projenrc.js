@@ -7,6 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'cdk-hugo-deploy',
   description: 'Deploy Hugo static websites to AWS',
   repositoryUrl: 'https://github.com/maafk/cdk-hugo-deploy.git',
+  gitignore: ['.vscode/'],
   eslintOptions: { prettier: true },
   publishToPypi: {
     distName: 'cdk-hugo-deploy',
