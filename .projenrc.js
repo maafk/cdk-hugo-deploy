@@ -25,7 +25,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     mavenEndpoint: 'https://s01.oss.sonatype.org',
   },
   publishToGo: {
-    githubRepo: 'github.com/maafk/cdk-hugo-deploy',
+    moduleName: 'github.com/maafk/cdk-hugo-deploy',
   },
 });
 project.package.addField('resolutions', {

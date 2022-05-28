@@ -136,7 +136,9 @@
         "namespace": "maafk.CdkHugoDeploy",
         "packageId": "maafk.CdkHugoDeploy"
       },
-      "go": {}
+      "go": {
+        "moduleName": "github.com/maafk/cdk-hugo-deploy"
+      }
     },
     "tsc": {
       "outDir": "lib",
