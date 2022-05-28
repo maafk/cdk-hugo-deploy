@@ -6,6 +6,8 @@ This is an AWS CDK Construct for easily deploying [Hugo](https://gohugo.io/) Sta
 
 Before deploying, run the `hugo` command in your Hugo project to generate a built site in the `public` directory.
 
+## Typescript
+
 ```go
 import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { HugoDeploy } from 'cdk-hugo-deploy';
@@ -19,6 +21,23 @@ export class MyStack extends Stack {
       domainName: 'example.com'  // Domain you already have a hosted zone for
     });
 }
+```
+
+## Python
+
+```python
+from constructs import Construct
+from aws_cdk import Stack
+from cdk_hugo_deploy import HugoDeploy
+
+class MyStack(Stack):
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+
+        HugoDeploy(self, "HugoDeploy",
+            public_dir="path/to/hugo-project/public",
+            domain_name="example.com"
+        )
 ```
 
 ## Prerequisites
