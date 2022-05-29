@@ -49,3 +49,7 @@ Assumes that there is already a Route53 hosted zone for `domainName` that can be
 Other constructs for deploying Single Page Applicationis (SPA) such as [CDK-SPA-Deploy](https://github.com/nideveloper/CDK-SPA-Deploy) don't account for how Hugo handles paths that end in `/`.
 
 This construct includes a [Cloudfront Function](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html) to [rewrite paths](src/hugoPaths.js) to ensure `/path/to/page/` will request `/path/to/page/index.html` from the S3 Origin.
+
+## Contributing
+
+Please open an [issue](https://github.com/maafk/cdk-hugo-deploy/issues) with any updates/features you'd like on this
