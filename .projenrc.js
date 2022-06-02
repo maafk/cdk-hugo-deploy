@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Taylor Ondrey',
   authorAddress: 'taylor@taylorondrey.com',
-  cdkVersion: '2.24.1',
+  cdkVersion: '2.25.0',
   defaultReleaseBranch: 'main',
   name: 'cdk-hugo-deploy',
   description: 'Deploy Hugo static websites to AWS',
@@ -11,6 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   eslintOptions: { prettier: true },
   autoApproveOptions: {
     secret: 'PROJEN_GITHUB_TOKEN',
+    allowedUsernames: ['maafk'],
   },
   depsUpgradeOptions: {
     workflowOptions: {
