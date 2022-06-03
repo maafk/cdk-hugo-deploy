@@ -16,6 +16,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve'],
+      projenCredentials: ['GITHUB_TOKEN'],
     },
   },
   publishToPypi: {
