@@ -1,4 +1,5 @@
 const { awscdk } = require('projen');
+const { GithubCredentials } = require('projen/lib/github');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Taylor Ondrey',
   authorAddress: 'taylor@taylorondrey.com',
@@ -9,14 +10,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/maafk/cdk-hugo-deploy.git',
   gitignore: ['.vscode/'],
   eslintOptions: { prettier: true },
-  autoApproveOptions: {
-    secret: 'PROJEN_GITHUB_TOKEN',
-    allowedUsernames: ['maafk'],
-  },
+  autoApproveOptions: {},
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve'],
-      projenCredentials: ['GITHUB_TOKEN'],
+      projenCredentials: GithubCredentials.fromPersonalAccessToken(
+        'PROJEN_GITHUB_TOKEN'
+      ),
     },
   },
   publishToPypi: {
