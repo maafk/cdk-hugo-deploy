@@ -11,12 +11,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   gitignore: ['.vscode/'],
   eslintOptions: { prettier: true },
   autoApproveOptions: {},
+  autoApproveUpgrades: true,
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve'],
-      projenCredentials: GithubCredentials.fromPersonalAccessToken(
-        'PROJEN_GITHUB_TOKEN'
-      ),
     },
   },
   publishToPypi: {
