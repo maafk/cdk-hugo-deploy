@@ -8,9 +8,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'cdk-hugo-deploy',
   description: 'Deploy Hugo static websites to AWS',
   repositoryUrl: 'https://github.com/maafk/cdk-hugo-deploy.git',
+  keywords: ['aws', 'cdk', 'hugo'],
   gitignore: ['.vscode/'],
   eslintOptions: { prettier: true },
-  autoApproveOptions: {},
+  autoApproveOptions: {
+    allowedUsernames: ['maafk'],
+  },
   autoApproveUpgrades: true,
   depsUpgradeOptions: {
     workflowOptions: {
