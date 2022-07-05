@@ -32,6 +32,11 @@ export interface HugoDeployProps {
   readonly domainName: string;
 
   /**
+   * Zone the Domain Name is created in
+   */
+  readonly zone?: HostedZone;
+
+  /**
    * Region deploying to
    *
    * @default - us-east-1
@@ -54,9 +59,11 @@ export class HugoDeploy extends Construct {
     const bucket = new Bucket(this, 'WebsiteBucket', {
       publicReadAccess: false,
     });
-    const zone = HostedZone.fromLookup(this, 'HostedZone', {
-      domainName: this.domainName,
-    });
+    const zone = props.zone
+      ? props.zone
+      : HostedZone.fromLookup(this, 'HostedZone', {
+          domainName: this.domainName,
+        });
     const certificate = new DnsValidatedCertificate(this, 'Certificate', {
       hostedZone: zone,
       domainName: this.domainName,
