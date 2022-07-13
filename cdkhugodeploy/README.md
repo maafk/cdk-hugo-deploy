@@ -8,7 +8,7 @@ Before deploying, run the `hugo` command in your Hugo project to generate a buil
 
 ## Typescript
 
-```typescript
+```go
 import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { HugoDeploy } from 'cdk-hugo-deploy';
 
