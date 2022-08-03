@@ -153,6 +153,7 @@ const hugoDeployProps: HugoDeployProps = { ... }
 | <code><a href="#cdk-hugo-deploy.HugoDeployProps.property.domainName">domainName</a></code> | <code>string</code> | Domain name of the site deploying to. |
 | <code><a href="#cdk-hugo-deploy.HugoDeployProps.property.publicDir">publicDir</a></code> | <code>string</code> | Path to Hugo public directory, which is generated after running the `hugo` command. |
 | <code><a href="#cdk-hugo-deploy.HugoDeployProps.property.region">region</a></code> | <code>string</code> | Region deploying to. |
+| <code><a href="#cdk-hugo-deploy.HugoDeployProps.property.zone">zone</a></code> | <code>aws-cdk-lib.aws_route53.HostedZone</code> | Zone the Domain Name is created in. |
 
 ---
 
@@ -194,6 +195,18 @@ public readonly region: string;
 - *Default:* us-east-1
 
 Region deploying to.
+
+---
+
+##### `zone`<sup>Optional</sup> <a name="zone" id="cdk-hugo-deploy.HugoDeployProps.property.zone"></a>
+
+```typescript
+public readonly zone: HostedZone;
+```
+
+- *Type:* aws-cdk-lib.aws_route53.HostedZone
+
+Zone the Domain Name is created in.
 
 ---
 
