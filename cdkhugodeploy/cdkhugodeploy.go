@@ -5,6 +5,7 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/maafk/cdk-hugo-deploy/cdkhugodeploy/jsii"
 
+	"github.com/aws/aws-cdk-go/awscdk/v2/awsroute53"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/maafk/cdk-hugo-deploy/cdkhugodeploy/internal"
 )
@@ -133,5 +134,7 @@ type HugoDeployProps struct {
 	PublicDir *string `field:"required" json:"publicDir" yaml:"publicDir"`
 	// Region deploying to.
 	Region *string `field:"optional" json:"region" yaml:"region"`
+	// Zone the Domain Name is created in.
+	Zone awsroute53.HostedZone `field:"optional" json:"zone" yaml:"zone"`
 }
 
