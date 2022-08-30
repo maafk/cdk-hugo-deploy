@@ -69,6 +69,9 @@ func (j *jsiiProxy_HugoDeploy) Region() *string {
 func NewHugoDeploy(scope constructs.Construct, id *string, props *HugoDeployProps) HugoDeploy {
 	_init_.Initialize()
 
+	if err := validateNewHugoDeployParameters(scope, id, props); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_HugoDeploy{}
 
 	_jsii_.Create(
@@ -97,6 +100,9 @@ func NewHugoDeploy_Override(h HugoDeploy, scope constructs.Construct, id *string
 func HugoDeploy_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
+	if err := validateHugoDeploy_IsConstructParameters(x); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
