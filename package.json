@@ -59,7 +59,7 @@
     "jsii-pacmak": "^1.80.0",
     "npm-check-updates": "^16",
     "prettier": "^2.8.7",
-    "projen": "^0.71.1",
+    "projen": "^0.71.6",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.9.5"
@@ -67,6 +67,11 @@
   "peerDependencies": {
     "aws-cdk-lib": "^2.25.0",
     "constructs": "^10.0.5"
+  },
+  "resolutions": {
+    "ansi-regex": "^5.0.1",
+    "json-schema": "^0.4.0",
+    "@types/prettier": "2.6.0"
   },
   "keywords": [
     "aws",
@@ -144,12 +149,6 @@
       "outDir": "lib",
       "rootDir": "src"
     }
-  },
-  "resolutions": {
-    "ansi-regex": "^5.0.1",
-    "json-schema": "^0.4.0",
-    "@types/prettier": "2.6.0",
-    "@types/babel__traverse": "7.18.2"
   },
   "prettier": {
     "singleQuote": true,
