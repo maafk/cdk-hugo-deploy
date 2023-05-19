@@ -11,6 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   keywords: ['aws', 'cdk', 'hugo'],
   gitignore: ['.vscode/'],
   eslintOptions: { prettier: true },
+  jsiiVersion: '~5.0.0',
   autoApproveOptions: {
     allowedUsernames: ['maafk'],
   },
@@ -38,6 +39,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     moduleName: 'github.com/maafk/cdk-hugo-deploy',
   },
 });
+
 project.package.addField('resolutions', {
   'ansi-regex': '^5.0.1',
   'json-schema': '^0.4.0',
