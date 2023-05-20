@@ -1,6 +1,5 @@
 //go:build !no_runtime_type_checking
 
-// Deploy Hugo static websites to AWS
 package cdkhugodeploy
 
 import (

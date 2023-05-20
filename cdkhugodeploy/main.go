@@ -1,3 +1,4 @@
+// Deploy Hugo static websites to AWS
 package cdkhugodeploy
 
 import (
