@@ -14,6 +14,8 @@ type HugoDeployProps struct {
 	// By default, this will be the `public` directory in your hugo project.
 	PublicDir *string `field:"required" json:"publicDir" yaml:"publicDir"`
 	// Region deploying to.
+	// Default: - us-east-1.
+	//
 	Region *string `field:"optional" json:"region" yaml:"region"`
 	// Zone the Domain Name is created in.
 	Zone awsroute53.HostedZone `field:"optional" json:"zone" yaml:"zone"`
