@@ -13,7 +13,7 @@ import (
 	constructs "github.com/aws/constructs-go/constructs/v10/jsii"
 )
 
-//go:embed cdk-hugo-deploy-0.0.375.tgz
+//go:embed cdk-hugo-deploy-0.0.376.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -24,5 +24,5 @@ func Initialize() {
 	constructs.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("cdk-hugo-deploy", "0.0.375", tarball)
+	_jsii_.Load("cdk-hugo-deploy", "0.0.376", tarball)
 }
